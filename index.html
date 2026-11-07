@@ -934,11 +934,11 @@
           <span class="text-xs font-bold text-brand-red tracking-wider uppercase bg-red-100 px-3 py-1 rounded-full">
             সরাসরি আসুন
           </span>
-          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">আমাদের যোগাযোগের ঠিকানা</h2>
-          <p class="text-slate-600 text-sm mt-2">কামারহাট বাজার, পাথরঘাটা, বরগুনায় যেকোনো তথ্যের জন্য চলে আসুন।</p>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">আমাদের যোগাযোগের ঠিকানা ও লোকেশন</h2>
+          <p class="text-slate-600 text-sm mt-2">কামারহাট বাজার, পাথরঘাটা, বরগুনায় যেকোনো তথ্যের জন্য চলে আসুন অথবা গুগল ম্যাপে সহজেই লোকেশন ট্র্যাক করুন।</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           
           <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 text-center hover:border-emerald-300 transition">
             <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-emerald flex items-center justify-center text-2xl mx-auto mb-4">
@@ -946,8 +946,11 @@
             </div>
             <h4 class="text-lg font-bold text-slate-900 mb-1">প্রতিষ্ঠানের অবস্থান</h4>
             <p class="text-xs text-slate-600 leading-relaxed">
-              কামারহাট, পাথরঘাটা, বরগুনা, বাংলাদেশ
+              কামারহাট বাজার, পাথরঘাটা, বরগুনা, বাংলাদেশ
             </p>
+            <span class="inline-block mt-2 px-3 py-0.5 rounded-full bg-emerald-50 text-brand-emerald text-[11px] font-bold border border-emerald-200">
+              পোস্ট কোড: ৮৭২০
+            </span>
           </div>
 
           <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 text-center hover:border-amber-300 transition">
@@ -958,7 +961,10 @@
             <a href="tel:01744782589" class="text-sm font-extrabold text-brand-emerald block hover:underline">
               ০১৭৪৪৭৮২৫৮৯
             </a>
-            <p class="text-[11px] text-slate-500 mt-1">কল বা হোয়াটসঅ্যাপে বার্তা পাঠান</p>
+            <p class="text-[11px] text-slate-500 mt-1">কল বা হোয়াটসঅ্যাপে সরাসরি যোগাযোগ করুন</p>
+            <a href="https://wa.me/8801744782589" target="_blank" class="inline-flex items-center gap-1.5 mt-2 px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-bold hover:bg-emerald-100 transition">
+              <i class="fa-brands fa-whatsapp"></i> মেসেজ পাঠান
+            </a>
           </div>
 
           <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 text-center hover:border-red-300 transition">
@@ -967,11 +973,48 @@
             </div>
             <h4 class="text-lg font-bold text-slate-900 mb-1">খোলা থাকার সময়সূচি</h4>
             <p class="text-xs text-slate-600 leading-relaxed">
-              শনিবার - শুক্রবার (প্রতিদিন)<br>
+              শনিবার - শুক্রবার (সপ্তাহে ৭ দিন)<br>
               সকাল ৮:০০ টা হতে রাত ৯:০০ টা
             </p>
+            <span class="inline-block mt-2 px-3 py-0.5 rounded-full bg-red-50 text-brand-red text-[11px] font-bold border border-red-200">
+              সার্বক্ষণিক উন্মুক্ত
+            </span>
           </div>
 
+        </div>
+
+        <!-- Interactive Google Map Box -->
+        <div class="rounded-3xl overflow-hidden border border-slate-200/90 shadow-luxury bg-white p-3 sm:p-5">
+          <div class="flex flex-col sm:flex-row items-center justify-between pb-4 px-2 gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-brand-emerald flex items-center justify-center font-bold text-lg shrink-0">
+                <i class="fa-solid fa-location-crosshairs"></i>
+              </div>
+              <div>
+                <h4 class="font-extrabold text-slate-900 text-sm sm:text-base">গুগল ম্যাপে সরাসরি লোকেশন</h4>
+                <p class="text-xs text-slate-500">কামারহাট, পাথরঘাটা, বরগুনা</p>
+              </div>
+            </div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Kamarhat,+Patharghata,+Barguna" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="px-5 py-2.5 rounded-xl bg-brand-emerald hover:bg-brand-emeraldDark text-white text-xs sm:text-sm font-bold transition shadow-glow-emerald flex items-center gap-2 shrink-0">
+              <i class="fa-solid fa-diamond-turn-right text-amber-300 text-base"></i>
+              Google Maps-এ ডিরেকশন দেখুন
+            </a>
+          </div>
+
+          <!-- Responsive Google Map Embed -->
+          <div class="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-slate-200 relative bg-slate-100">
+            <iframe 
+              src="https://maps.google.com/maps?q=Kamarhat,+Patharghata,+Barguna,+Bangladesh&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              class="w-full h-full border-0" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Nixon Computer School Location Map">
+            </iframe>
+          </div>
         </div>
 
       </div>
