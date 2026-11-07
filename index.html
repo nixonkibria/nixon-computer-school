@@ -1,387 +1,1289 @@
-
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Nixon Computer School, কামারহাট, পাথরঘাটা, বরগুনা। কম্পিউটার প্রশিক্ষণ, অফিস অ্যাপ্লিকেশন কোর্স ও ডিজিটাল সেবা।">
-<meta name="theme-color" content="#064e3b">
-<title>Nixon Computer School | কম্পিউটার প্রশিক্ষণ</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nixon Computer School | নিক্সন কম্পিউটার স্কুল - কামারহাট, পাথরঘাটা</title>
+  
+  <!-- Google Fonts: Hind Siliguri for refined Bengali & Plus Jakarta Sans for UI elements -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              emerald: '#047857',
+              emeraldDark: '#064e3b',
+              emeraldDeep: '#022c22',
+              red: '#dc2626',
+              redDark: '#991b1b',
+              amber: '#f59e0b',
+              gold: '#fbbf24',
+              goldHover: '#d97706',
+              surface: '#0f172a',
+              cardDark: '#1e293b'
+            }
+          },
+          fontFamily: {
+            bangla: ['"Hind Siliguri"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', '"Hind Siliguri"', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-emerald': '0 0 45px -8px rgba(4, 120, 87, 0.35)',
+            'glow-gold': '0 0 35px -5px rgba(245, 158, 11, 0.35)',
+            'glow-red': '0 0 35px -5px rgba(220, 38, 38, 0.3)',
+            'luxury': '0 20px 45px -15px rgba(0, 0, 0, 0.08), 0 0 1px 1px rgba(0,0,0,0.03)'
+          }
+        }
+      }
+    }
+  </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-#contactForm input,
-#contactForm textarea {
-  width: 100%;
-  padding: 13px 15px;
-  margin: 8px 0 18px;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 16px;
-  background: white;
-}
-
-#contactForm input:focus,
-#contactForm textarea:focus {
-  outline: 2px solid #047857;
-  border-color: #047857;
-}
-
-#contactForm button {
-  width: 100%;
-}
-
-</style>
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+    }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .hero-mesh-bg {
+      background-color: #f8fafc;
+      background-image: 
+        radial-gradient(at 10% 20%, rgba(4, 120, 87, 0.12) 0px, transparent 50%),
+        radial-gradient(at 90% 10%, rgba(245, 158, 11, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 90%, rgba(220, 38, 38, 0.08) 0px, transparent 50%);
+    }
+    .mesh-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #047857 0%, #b45309 60%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .badge-gradient {
+      background: linear-gradient(135deg, rgba(4,120,87,0.08), rgba(245,158,11,0.15));
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 9px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #047857;
+    }
+  </style>
 </head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-emerald selection:text-white flex flex-col min-h-screen">
 
-<body>
-
-<div class="topbar">
-  <div class="container">
-    <span>📍 কামারহাট, পাথরঘাটা, বরগুনা</span>
-    <span>📞 01744782589 | সকাল ৮টা – রাত ৯টা</span>
-  </div>
-</div>
-
-<nav class="navbar">
-  <div class="container nav-inner">
-    <a href="#home" class="logo">
-      <div class="logo-icon">N</div>
-      <div>
-        <strong>Nixon Computer School</strong>
-        <small>কম্পিউটার প্রশিক্ষণ ও ডিজিটাল সেবা</small>
+  <!-- ================= TOP TICKER BAR ================= -->
+  <div class="bg-gradient-to-r from-brand-emeraldDeep via-slate-900 to-brand-emeraldDeep text-slate-100 text-xs sm:text-sm py-2 px-4 border-b border-emerald-900/40 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-brand-red text-white uppercase tracking-wider animate-pulse">
+          <span class="w-1.5 h-1.5 rounded-full bg-white mr-1.5 inline-block"></span> ভর্তি চলছে
+        </span>
+        <span class="text-slate-200 font-medium truncate">
+          নতুন কম্পিউটার ও অফিস অ্যাপ্লিকেশন কোর্সে বিশেষ ২৫% ছাড়! আসন সংখ্যা সীমিত।
+        </span>
       </div>
-    </a>
-
-    <div class="nav-links">
-      <a href="#home">হোম</a>
-      <a href="#about">আমাদের সম্পর্কে</a>
-      <a href="#courses">কোর্স</a>
-      <a href="#services">সেবা</a>
-      <a href="#contact">যোগাযোগ</a>
-      <a href="#admission" class="btn btn-green">ভর্তি আবেদন</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <span class="tag">🎓 ভর্তি চলছে — নতুন ব্যাচ</span>
-
-      <h1>
-        দক্ষতা অর্জন করুন,<br>
-        <span>গড়ুন আপনার ভবিষ্যৎ</span>
-      </h1>
-
-      <p>
-        আধুনিক কম্পিউটার প্রশিক্ষণ, অফিস অ্যাপ্লিকেশন কোর্স
-        এবং নির্ভরযোগ্য ডিজিটাল সেবা — সব এক ঠিকানায়।
-      </p>
-
-      <div class="hero-actions">
-        <a href="#admission" class="btn btn-green">ভর্তি হতে চাই →</a>
-        <a href="#courses" class="btn btn-yellow">কোর্স দেখুন</a>
-      </div>
-    </div>
-
-    <div class="hero-image">
-      <img
-        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85"
-        alt="কম্পিউটার প্রশিক্ষণ ও শিক্ষা">
-      <div class="floating-card">
-        💻 <span>হাতে-কলমে কম্পিউটার শিক্ষা</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="stats">
-  <div class="container stats-grid">
-    <div>
-      <strong>প্র্যাকটিক্যাল</strong>
-      <span>হাতে-কলমে প্রশিক্ষণ</span>
-    </div>
-    <div>
-      <strong>সহজ পদ্ধতি</strong>
-      <span>শিক্ষার্থীবান্ধব পাঠদান</span>
-    </div>
-    <div>
-      <strong>এক ঠিকানায়</strong>
-      <span>কম্পিউটার ও ডিজিটাল সেবা</span>
-    </div>
-  </div>
-</div>
-
-<section id="about">
-  <div class="container about-grid">
-    <div>
-      <img
-        src="https://images.unsplash.com/photo-1519385454155-9c4d9d9e6f2f?auto=format&fit=crop&w=1000&q=85"
-        alt="কম্পিউটার শিক্ষা ও প্রশিক্ষণ">
-    </div>
-
-    <div class="about-content">
-      <span class="tag">আমাদের পরিচিতি</span>
-      <h2>পাথরঘাটায় আধুনিক কম্পিউটার শিক্ষার নির্ভরযোগ্য প্রতিষ্ঠান</h2>
-
-      <p>
-        Nixon Computer School কামারহাট, পাথরঘাটা, বরগুনার
-        শিক্ষার্থীদের প্রযুক্তিনির্ভর দক্ষতা বৃদ্ধিতে কাজ করে।
-        আমাদের লক্ষ্য সহজ ও ব্যবহারিক পদ্ধতিতে কম্পিউটার শিক্ষা প্রদান।
-      </p>
-
-      <ul class="check-list">
-        <li>সহজ ও সাবলীল পাঠদান</li>
-        <li>ব্যবহারিক কম্পিউটার প্রশিক্ষণ</li>
-        <li>চাকরি উপযোগী দক্ষতা অর্জন</li>
-        <li>বিশ্বস্ত অনলাইন ও ডিজিটাল সেবা</li>
-      </ul>
-
-      <a href="#contact" class="btn btn-green">যোগাযোগ করুন</a>
-    </div>
-  </div>
-</section>
-
-<section class="courses" id="courses">
-  <div class="container">
-    <div class="section-heading">
-      <span>আমাদের কোর্স</span>
-      <h2>আপনার পছন্দের কোর্স নির্বাচন করুন</h2>
-      <p>দক্ষতা অর্জনের মাধ্যমে নিজের ভবিষ্যৎকে আরও সুন্দর করুন।</p>
-    </div>
-
-    <div class="card-grid">
-      <div class="course-card">
-        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="অফিস অ্যাপ্লিকেশন">
-        <div class="course-body">
-          <span class="course-label">জনপ্রিয় কোর্স</span>
-          <h3>অফিস অ্যাপ্লিকেশন</h3>
-          <p>MS Word, Excel, PowerPoint, Access এবং বাংলা-ইংরেজি টাইপিং।</p>
-          <a href="#admission" class="btn btn-green">ভর্তি আবেদন করুন</a>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=80" alt="বেসিক কম্পিউটার">
-        <div class="course-body">
-          <span class="course-label">নতুনদের জন্য</span>
-          <h3>বেসিক কম্পিউটার</h3>
-          <p>কম্পিউটার পরিচালনা, ফাইল ম্যানেজমেন্ট, ইন্টারনেট ও ইমেইল।</p>
-          <a href="#admission" class="btn btn-green">ভর্তি আবেদন করুন</a>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=700&q=80" alt="ডিজিটাল দক্ষতা">
-        <div class="course-body">
-          <span class="course-label">দক্ষতা উন্নয়ন</span>
-          <h3>ডিজিটাল দক্ষতা</h3>
-          <p>অনলাইন কাজ, ডিজিটাল ডকুমেন্ট ও দৈনন্দিন প্রযুক্তি ব্যবহার।</p>
-          <a href="#admission" class="btn btn-green">ভর্তি আবেদন করুন</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="container">
-    <div class="section-heading">
-      <span>আমাদের ডিজিটাল সেবা</span>
-      <h2>প্রয়োজনীয় সব সেবা এক ঠিকানায়</h2>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">📝</div>
-        <h3>অনলাইন আবেদন</h3>
-        <p>চাকরি, ভর্তি ও বিভিন্ন অনলাইন ফর্ম পূরণ।</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🖨️</div>
-        <h3>ফটোকপি ও প্রিন্ট</h3>
-        <p>কালার প্রিন্ট, ফটোকপি ও ডকুমেন্ট প্রিন্ট।</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">📸</div>
-        <h3>ছবি তোলা</h3>
-        <p>পাসপোর্ট সাইজ ছবি ও ছবি প্রিন্ট।</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">💻</div>
-        <h3>কম্পিউটার শিক্ষা</h3>
-        <p>বেসিক থেকে অফিস অ্যাপ্লিকেশন প্রশিক্ষণ।</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="why" id="why">
-  <div class="container">
-    <div class="section-heading">
-      <span>কেন আমাদের বেছে নেবেন?</span>
-      <h2>শিক্ষার্থীদের দক্ষতা অর্জনে আমরা প্রতিশ্রুতিবদ্ধ</h2>
-    </div>
-
-    <div class="why-grid">
-      <div class="why-card">
-        <h3>🎯 ব্যবহারিক প্রশিক্ষণ</h3>
-        <p>বাস্তব কাজের মাধ্যমে কম্পিউটার শেখার সুযোগ।</p>
-      </div>
-
-      <div class="why-card">
-        <h3>🤝 শিক্ষার্থীবান্ধব পরিবেশ</h3>
-        <p>সহজ ভাষায় পাঠদান এবং শেখার সহায়তা।</p>
-      </div>
-
-      <div class="why-card">
-        <h3>💰 সাশ্রয়ী কোর্স</h3>
-        <p>সাধারণ শিক্ষার্থীদের উপযোগী কোর্স ও সেবা।</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="admission">
-  <div class="container">
-    <div class="cta">
-      <h2>নতুন ব্যাচে ভর্তি চলছে!</h2>
-      <p>আজই যোগাযোগ করুন এবং আপনার কম্পিউটার শেখার যাত্রা শুরু করুন।</p>
-
-      <a href="https://wa.me/8801744782589?text=আমি%20কম্পিউটার%20কোর্সে%20ভর্তি%20হতে%20চাই"
-         class="btn btn-yellow">
-        WhatsApp-এ ভর্তি আবেদন
-      </a>
-
-      <a href="tel:01744782589" class="btn btn-green">
-        সরাসরি কল করুন
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="section-heading">
-      <span>যোগাযোগ</span>
-      <h2>আমাদের প্রতিষ্ঠানে চলে আসুন</h2>
-      <p>আপনার যেকোনো প্রশ্ন বা সেবার জন্য যোগাযোগ করুন।</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-box">
-        <h3>📍 যোগাযোগের তথ্য</h3>
-
-        <div class="contact-item">
-          <strong>ঠিকানা</strong>
-          <p>কামারহাট, পাথরঘাটা, বরগুনা, বাংলাদেশ</p>
-        </div>
-
-        <div class="contact-item">
-          <strong>ফোন</strong>
-          <p><a href="tel:01744782589">01744782589</a></p>
-        </div>
-
-        <div class="contact-item">
-          <strong>সেবা প্রদানের সময়</strong>
-          <p>প্রতিদিন সকাল ৮টা – রাত ৯টা</p>
-        </div>
-
-        <a href="https://wa.me/8801744782589"
-           class="btn btn-green">
-          WhatsApp-এ যোগাযোগ
+      <div class="hidden md:flex items-center gap-5 text-xs text-slate-300">
+        <span class="flex items-center gap-1.5 text-amber-300">
+          <i class="fa-solid fa-clock"></i> খোলা: সকাল ৮:০০ - রাত ৯:০০
+        </span>
+        <span class="text-white/20">|</span>
+        <a href="tel:01744782589" class="hover:text-amber-400 font-bold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-phone text-emerald-400"></i> ০১৭১৪-৪৭৮২৫৮৯
         </a>
       </div>
+    </div>
+  </div>
 
-      <div class="contact-box">
-        <h3>💬 দ্রুত বার্তা পাঠান</h3>
+  <!-- ================= LUXURY HEADER / NAVBAR ================= -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Brand -->
+        <a href="#home" class="flex items-center gap-3.5 group">
+          <div class="relative">
+            <div class="w-13 h-13 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-brand-emerald via-emerald-600 to-emerald-900 flex items-center justify-center text-white shadow-glow-emerald group-hover:scale-105 transition-all duration-300 border border-emerald-400/30">
+              <i class="fa-solid fa-laptop-code text-2xl text-amber-300"></i>
+            </div>
+            <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-brand-red border-2 border-white rounded-full"></span>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900">Nixon</span>
+              <span class="text-xl sm:text-2xl font-black text-brand-emerald">Computer</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold border border-amber-300 hidden sm:inline">School</span>
+            </div>
+            <p class="text-xs text-slate-500 font-semibold tracking-wide flex items-center gap-1">
+              <i class="fa-solid fa-location-dot text-brand-red text-[11px]"></i> কামারহাট, পাথরঘাটা, বরগুনা
+            </p>
+          </div>
+        </a>
 
-        <form id="contactForm">
-          <p>আপনার নাম</p>
-          <input name="name" required placeholder="আপনার নাম লিখুন">
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-7 text-sm font-bold text-slate-700">
+          <a href="#home" class="hover:text-brand-emerald transition-colors py-1">মূলপাতা</a>
+          <a href="#about" class="hover:text-brand-emerald transition-colors py-1">পরিচিতি</a>
+          <a href="#courses" class="hover:text-brand-emerald transition-colors py-1 flex items-center gap-1">
+            কোর্সসমূহ <span class="text-[10px] bg-red-100 text-brand-red px-1.5 py-0.2 rounded-full font-bold">হট</span>
+          </a>
+          <a href="#services" class="hover:text-brand-emerald transition-colors py-1">ডিজিটাল সেবা</a>
+          <a href="#calculator" class="hover:text-brand-emerald transition-colors py-1">ফি ও ভর্তি</a>
+          <a href="#reviews" class="hover:text-brand-emerald transition-colors py-1">মতামত</a>
+          <a href="#contact" class="hover:text-brand-emerald transition-colors py-1">যোগাযোগ</a>
+        </nav>
 
-          <p>মোবাইল নম্বর</p>
-          <input name="phone" required placeholder="017XXXXXXXX">
-
-          <p>আপনার বার্তা</p>
-          <textarea name="message" required
-            placeholder="আপনি কী জানতে চান?"
-            rows="4"></textarea>
-
-          <button class="btn btn-green" type="submit">
-            WhatsApp-এ বার্তা পাঠান
+        <!-- CTA Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="tel:01744782589" class="p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:text-brand-emerald hover:border-emerald-300 hover:bg-emerald-50/50 transition" title="সরাসরি কল দিন">
+            <i class="fa-solid fa-phone text-base"></i>
+          </a>
+          <button onclick="openAdmissionModal()" class="relative group overflow-hidden px-6 py-2.5 rounded-xl bg-gradient-to-r from-brand-emerald via-emerald-700 to-brand-emeraldDark text-white font-bold text-sm shadow-glow-emerald hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+            <span class="relative z-10 flex items-center gap-2">
+              <i class="fa-solid fa-user-graduate text-amber-300"></i>
+              অনলাইন ভর্তি
+            </span>
+            <div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
           </button>
-        </form>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <div class="flex lg:hidden">
+          <button id="mobileMenuBtn" aria-label="মেনু খুলুন" class="p-2.5 rounded-xl text-slate-800 hover:bg-slate-100 focus:outline-none border border-slate-200">
+            <i id="menuIcon" class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
       </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-t border-slate-200 px-6 py-6 space-y-3 shadow-2xl transition-all">
+      <a href="#home" class="mobile-nav-link block py-2 text-base font-bold text-slate-800 hover:text-brand-emerald border-b border-slate-100">মূলপাতা</a>
+      <a href="#about" class="mobile-nav-link block py-2 text-base font-bold text-slate-800 hover:text-brand-emerald border-b border-slate-100">পরিচিতি</a>
+      <a href="#courses" class="mobile-nav-link block py-2 text-base font-bold text-slate-800 hover:text-brand-emerald border-b border-slate-100">কোর্সসমূহ</a>
+      <a href="#services" class="mobile-nav-link block py-2 text-base font-bold text-slate-800 hover:text-brand-emerald border-b border-slate-100">ডিজিটাল সেবা</a>
+      <a href="#calculator" class="mobile-nav-link block py-2 text-base font-bold text-slate-800 hover:text-brand-emerald border-b border-slate-100">কোর্স ফি ও ভর্তি</a>
+      <a href="#reviews" class="mobile-nav-link block py-2 text-base font-bold text-slate-800 hover:text-brand-emerald border-b border-slate-100">শিক্ষার্থীদের মতামত</a>
+      <a href="#contact" class="mobile-nav-link block py-2 text-base font-bold text-slate-800 hover:text-brand-emerald">যোগাযোগের ঠিকানা</a>
+      <div class="pt-4 flex flex-col gap-3">
+        <button onclick="openAdmissionModal(); toggleMobileMenu();" class="w-full py-3 bg-brand-emerald text-white rounded-xl font-bold shadow-md text-center flex items-center justify-center gap-2">
+          <i class="fa-solid fa-user-graduate text-amber-300"></i> অনলাইন ভর্তি ফরম পূরণ
+        </button>
+        <a href="tel:01744782589" class="w-full py-3 bg-slate-900 text-white rounded-xl font-bold text-center flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone text-emerald-400"></i> ০১৭১৪-৪৭৮২৫৮৯
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="flex-grow">
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="relative hero-mesh-bg pt-14 pb-20 lg:pt-24 lg:pb-32 overflow-hidden border-b border-slate-200/60">
+      <div class="mesh-glow w-96 h-96 bg-brand-emerald/15 -top-20 -left-20"></div>
+      <div class="mesh-glow w-96 h-96 bg-brand-amber/15 top-1/2 right-0"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Hero Text Content -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-gradient border border-amber-300/60 text-slate-800 text-xs sm:text-sm font-bold shadow-sm">
+              <span class="flex h-2.5 w-2.5 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-red"></span>
+              </span>
+              <span>পাথরঘাটার শীর্ষস্থানীয় আধুনিক আইটি ও কম্পিউটার ট্রেনিং সেন্টার</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.2] tracking-tight">
+              দক্ষ প্রযুক্তি শিক্ষায় গড়ুন আপনার ক্যারিয়ার — 
+              <span class="gold-gradient-text block mt-1">নিক্সন কম্পিউটার স্কুল</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              বেসিক কম্পিউটার, সরকারি চাকরি উপযোগী অফিস অ্যাপ্লিকেশন ও ডিজিটাল কাজের সেরা বাস্তবমুখী প্ল্যাটফর্ম। কামারহাট, পাথরঘাটায় মানসম্মত প্রশিক্ষণ ও যাবতীয় দ্রুততম অনলাইন সেবা।
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+              <button onclick="openAdmissionModal()" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-emerald to-emerald-800 text-white font-extrabold text-base shadow-glow-emerald hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex items-center gap-2.5">
+                <i class="fa-solid fa-graduation-cap text-amber-300 text-lg"></i>
+                এখনই ভর্তি হন
+              </button>
+              <a href="#courses" class="px-7 py-4 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-bold text-base border border-slate-300 shadow-sm transition hover:border-slate-400 flex items-center gap-2">
+                <i class="fa-solid fa-layer-group text-brand-emerald"></i>
+                কোর্স সিলেবাস দেখুন
+              </a>
+            </div>
+
+            <!-- Trust Metrics Grid -->
+            <div class="pt-8 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div class="bg-white/80 backdrop-blur-sm p-3.5 rounded-2xl border border-slate-200/70 shadow-sm text-center">
+                <div class="text-2xl sm:text-3xl font-extrabold text-brand-emerald font-sans">১,০০০+</div>
+                <div class="text-xs text-slate-600 font-bold mt-0.5">সফল শিক্ষার্থী</div>
+              </div>
+              <div class="bg-white/80 backdrop-blur-sm p-3.5 rounded-2xl border border-slate-200/70 shadow-sm text-center">
+                <div class="text-2xl sm:text-3xl font-extrabold text-brand-red font-sans">১০০%</div>
+                <div class="text-xs text-slate-600 font-bold mt-0.5">ব্যবহারিক ক্লাস</div>
+              </div>
+              <div class="bg-white/80 backdrop-blur-sm p-3.5 rounded-2xl border border-slate-200/70 shadow-sm text-center">
+                <div class="text-2xl sm:text-3xl font-extrabold text-brand-goldHover font-sans">১ জন: ১ পিসি</div>
+                <div class="text-xs text-slate-600 font-bold mt-0.5">স্বতন্ত্র কম্পিউটার</div>
+              </div>
+              <div class="bg-white/80 backdrop-blur-sm p-3.5 rounded-2xl border border-slate-200/70 shadow-sm text-center">
+                <div class="text-2xl sm:text-3xl font-extrabold text-slate-800 font-sans">৯৮%</div>
+                <div class="text-xs text-slate-600 font-bold mt-0.5">শিক্ষার্থী সন্তুষ্টি</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Luxury Interactive Feature Card -->
+          <div class="lg:col-span-5">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              
+              <!-- Subtle glow framing -->
+              <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-emerald via-amber-400 to-brand-red rounded-3xl blur-xl opacity-30 animate-tilt"></div>
+
+              <div class="relative bg-white/95 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-luxury border border-white">
+                
+                <!-- Lab Status Header -->
+                <div class="flex items-center justify-between pb-5 border-b border-slate-100">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 text-brand-emerald flex items-center justify-center font-bold text-lg">
+                      <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-extrabold text-slate-900 text-sm">নিক্সন আইটি ল্যাব সুবিধা</h4>
+                      <p class="text-xs text-slate-500">পাথরঘাটা শাখার আধুনিক পরিবেশ</p>
+                    </div>
+                  </div>
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1.5"></span> অ্যাডমিশন ওপেন
+                  </span>
+                </div>
+
+                <!-- Highlight bullets -->
+                <div class="mt-6 space-y-4">
+                  <div class="flex items-start gap-3.5 p-3 rounded-2xl bg-slate-50 border border-slate-100/80 hover:bg-emerald-50/40 transition">
+                    <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                      <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div>
+                      <h5 class="text-xs font-bold text-slate-900">হাই-স্পিড কোর i5 কম্পিউটার সেটআপ</h5>
+                      <p class="text-[11px] text-slate-500">টাইপিং ও অফিস অ্যাপ্লিকেশনের মসৃণ পারফরম্যান্স</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3.5 p-3 rounded-2xl bg-slate-50 border border-slate-100/80 hover:bg-emerald-50/40 transition">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-100 text-brand-emerald flex items-center justify-center shrink-0">
+                      <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                      <h5 class="text-xs font-bold text-slate-900">সরকারি মানসম্মত কোর্স সার্টিফিকেট</h5>
+                      <p class="text-[11px] text-slate-500">চাকরি ও জীবনবৃত্তান্ত (CV)-তে শতভাগ গ্রহণযোগ্য</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3.5 p-3 rounded-2xl bg-slate-50 border border-slate-100/80 hover:bg-emerald-50/40 transition">
+                    <div class="w-9 h-9 rounded-xl bg-red-100 text-brand-red flex items-center justify-center shrink-0">
+                      <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div>
+                      <h5 class="text-xs font-bold text-slate-900">আজীবন ফ্রি প্র্যাকটিস ও গাইডলাইন</h5>
+                      <p class="text-[11px] text-slate-500">কোর্স শেষেও ল্যাব ব্যবহারে সার্বক্ষণিক সহায়তা</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Call to action inside hero card -->
+                <div class="mt-6 pt-5 border-t border-slate-100">
+                  <div class="bg-gradient-to-r from-emerald-900 to-slate-900 text-white p-4 rounded-2xl flex items-center justify-between">
+                    <div>
+                      <p class="text-[11px] text-emerald-300 font-semibold">সরাসরি পরামর্শের জন্য</p>
+                      <p class="text-sm font-extrabold">০১৭৪৪৭৮২৫৮৯</p>
+                    </div>
+                    <a href="https://wa.me/8801744782589?text=হ্যালো!%20আমি%20কোর্স%20সম্পর্কে%20জানতে%20চাই" target="_blank" class="px-3.5 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs transition flex items-center gap-1.5 shadow">
+                      <i class="fa-brands fa-whatsapp text-sm"></i> চ্যাট করুন
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="inline-block px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-brand-emerald text-xs font-bold uppercase tracking-wider mb-2">
+            আমাদের বিশেষত্ব ও সুযোগ-সুবিধা
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900">কেন নিক্সন কম্পিউটার স্কুল সেরা?</h2>
+          <p class="text-slate-600 mt-3 text-base">
+            পাথরঘাটার কামারহাটে শিক্ষার্থীদের কম্পিউটার ভীতি দূর করে বাস্তবমুখী প্রজেক্টের মাধ্যমে আত্মবিশ্বাসী করে তোলাই আমাদের মূল লক্ষ্য।
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-emerald-300 hover:shadow-luxury transition-all duration-300 group">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-emerald flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-emerald group-hover:text-white transition-all">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">ব্যক্তিগত কেয়ার ও নজরদারি</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              একসাথে গাদাগাদি করে নয়, সীমিত আসনের ব্যাচে প্রত্যেক শিক্ষার্থীকে আন্তরিকভাবে ও হাতে ধরে টাইপিং এবং সফটওয়্যার চালানো শেখানো হয়।
+            </p>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-amber-300 hover:shadow-luxury transition-all duration-300 group">
+            <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-amber group-hover:text-white transition-all">
+              <i class="fa-solid fa-file-shield"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">চাকরি উপযোগী কারিকুলাম</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              সরকারি ও বেসরকারি অফিসগুলোতে যেসব কাজ বাধ্যতামূলক (চিঠি টাইপ, এক্সেল শিট হিসাব, প্রেজেন্টেশন ও ইমেইলিং)—সেগুলো পুঙ্খানুপুঙ্খ শেখানো হয়।
+            </p>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-red-300 hover:shadow-luxury transition-all duration-300 group">
+            <div class="w-14 h-14 rounded-2xl bg-red-100 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">আইটি সেবার সম্পূর্ণ হাব</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              একই ছাদের নিচে কম্পিউটার ট্রেনিং ছাড়াও নির্ভুল অনলাইন আবেদন, পাসপোর্ট ছবি, ফটোকপি ও প্রিন্টিংয়ের সবচেয়ে দ্রুততম ব্যবস্থা।
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= COURSE CATALOG ================= -->
+    <section id="courses" class="py-20 bg-slate-50 border-t border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div class="max-w-2xl">
+            <span class="text-xs font-bold text-brand-red tracking-wider uppercase bg-red-100/80 px-3 py-1 rounded-full">
+              দক্ষতা উন্নয়ন কোর্সসমূহ
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">আমাদের প্রফেশনাল কারিকুলাম</h2>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">
+              শিক্ষার্থী, চাকরিপ্রার্থী ও উদ্যোক্তাদের উপযোগী করে সাজানো আধুনিক কম্পিউটার প্রশিক্ষণ কোর্স।
+            </p>
+          </div>
+          <div class="shrink-0">
+            <button onclick="openAdmissionModal()" class="px-6 py-3 rounded-xl bg-white border border-slate-300 font-bold text-slate-800 hover:bg-brand-emerald hover:text-white hover:border-brand-emerald transition shadow-sm text-sm flex items-center gap-2">
+              <i class="fa-solid fa-paper-plane"></i> সব কোর্সের ফর্ম খুলুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Course Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Course 1 -->
+          <div class="bg-white rounded-3xl p-7 shadow-luxury border border-slate-200/90 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative group">
+            <div class="absolute -top-3.5 right-6 px-3 py-0.5 rounded-full bg-brand-emerald text-white text-[11px] font-extrabold uppercase shadow-sm">
+              সর্বাধিক জনপ্রিয়
+            </div>
+
+            <div>
+              <div class="w-13 h-13 w-12 h-12 rounded-2xl bg-emerald-50 text-brand-emerald flex items-center justify-center text-2xl mb-5 group-hover:bg-brand-emerald group-hover:text-white transition-colors">
+                <i class="fa-solid fa-file-word"></i>
+              </div>
+
+              <div class="flex items-center gap-2 text-xs text-slate-500 font-semibold mb-2">
+                <span><i class="fa-solid fa-calendar-days text-amber-500 mr-1"></i> ৩ মাস / ৬ মাস মেয়াদী</span>
+                <span>•</span>
+                <span><i class="fa-solid fa-clock text-emerald-600 mr-1"></i> সপ্তাহে ৩ দিন</span>
+              </div>
+
+              <h3 class="text-xl font-black text-slate-900 group-hover:text-brand-emerald transition-colors">
+                কম্পিউটার অফিস অ্যাপ্লিকেশন
+              </h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                সরকারি ও বেসরকারি চাকরির লিখিত ও প্র্যাকটিক্যাল পরীক্ষার শতভাগ উপযোগী স্ট্যান্ডার্ড কোর্স।
+              </p>
+
+              <!-- Modules -->
+              <div class="mt-5 space-y-2 border-t border-slate-100 pt-4">
+                <div class="text-xs font-bold text-slate-700">সিলেবাসের প্রধান বিষয়সমূহ:</div>
+                <ul class="text-xs text-slate-600 space-y-1.5">
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-emerald text-xs"></i>
+                    <span>MS Word (অফিস ডকুমেন্টেশন ও টাইপিং)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-emerald text-xs"></i>
+                    <span>MS Excel (হিসাব-নিকাশ, বেতন শিট ও ফর্মুলা)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-emerald text-xs"></i>
+                    <span>MS PowerPoint (প্রেজেন্টেশন স্লাইড ডিজাইন)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-emerald text-xs"></i>
+                    <span>বাংলা ও ইংরেজি দ্রুত টাইপিং গতি বাড়ানো</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-slate-400 block font-medium">কোর্স ফি</span>
+                <span class="text-lg font-black text-slate-900">সুলভ ও কিস্তিতে</span>
+              </div>
+              <button onclick="openAdmissionModal('কম্পিউটার অফিস অ্যাপ্লিকেশন')" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-emerald text-white text-xs font-bold transition shadow">
+                ভর্তি আবেদন ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- Course 2 -->
+          <div class="bg-white rounded-3xl p-7 shadow-luxury border border-slate-200/90 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative group">
+            <div class="absolute -top-3.5 right-6 px-3 py-0.5 rounded-full bg-amber-500 text-slate-950 text-[11px] font-extrabold uppercase shadow-sm">
+              বেসিক টু অ্যাডভান্সড
+            </div>
+
+            <div>
+              <div class="w-13 h-13 w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center text-2xl mb-5 group-hover:bg-brand-amber group-hover:text-white transition-colors">
+                <i class="fa-solid fa-desktop"></i>
+              </div>
+
+              <div class="flex items-center gap-2 text-xs text-slate-500 font-semibold mb-2">
+                <span><i class="fa-solid fa-calendar-days text-amber-500 mr-1"></i> ২ মাস মেয়াদী</span>
+                <span>•</span>
+                <span><i class="fa-solid fa-clock text-emerald-600 mr-1"></i> রেগুলার ব্যাচ</span>
+              </div>
+
+              <h3 class="text-xl font-black text-slate-900 group-hover:text-amber-600 transition-colors">
+                বেসিক কম্পিউটার ও ইন্টারনেট
+              </h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                যাঁরা কম্পিউটার একদমই নতুন শুরু করছেন, কম্পিউটার অন-অফ থেকে শুরু করে ফাইল ম্যানেজমেন্ট শেখার উপযুক্ত প্ল্যাটফর্ম।
+              </p>
+
+              <!-- Modules -->
+              <div class="mt-5 space-y-2 border-t border-slate-100 pt-4">
+                <div class="text-xs font-bold text-slate-700">সিলেবাসের প্রধান বিষয়সমূহ:</div>
+                <ul class="text-xs text-slate-600 space-y-1.5">
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-amber-600 text-xs"></i>
+                    <span>কম্পিউটার হার্ডওয়্যার পরিচিতি ও ফাইল সিকিউরিটি</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-amber-600 text-xs"></i>
+                    <span>ইন্টারনেট ব্রাউজিং, তথ্য অনুসন্ধান ও গুগল ড্রাইভ</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-amber-600 text-xs"></i>
+                    <span>ইমেইল অ্যাকাউন্ট খোলা ও পেশাদার চিঠি পাঠানো</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-amber-600 text-xs"></i>
+                    <span>সোশ্যাল মিডিয়া ও সাইবার সচেতনতা</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-slate-400 block font-medium">কোর্স ফি</span>
+                <span class="text-lg font-black text-slate-900">বিশেষ ছাড় চলছে</span>
+              </div>
+              <button onclick="openAdmissionModal('বেসিক কম্পিউটার ও ইন্টারনেট')" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-amber-600 text-white text-xs font-bold transition shadow">
+                ভর্তি আবেদন ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div class="bg-white rounded-3xl p-7 shadow-luxury border border-slate-200/90 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative group">
+            <div class="absolute -top-3.5 right-6 px-3 py-0.5 rounded-full bg-brand-red text-white text-[11px] font-extrabold uppercase shadow-sm">
+              চাহিদাসম্পন্ন
+            </div>
+
+            <div>
+              <div class="w-13 h-13 w-12 h-12 rounded-2xl bg-red-50 text-brand-red flex items-center justify-center text-2xl mb-5 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                <i class="fa-solid fa-keyboard"></i>
+              </div>
+
+              <div class="flex items-center gap-2 text-xs text-slate-500 font-semibold mb-2">
+                <span><i class="fa-solid fa-calendar-days text-amber-500 mr-1"></i> ১ থেকে ৩ মাস</span>
+                <span>•</span>
+                <span><i class="fa-solid fa-clock text-emerald-600 mr-1"></i> স্পেশাল প্র্যাকটিস</span>
+              </div>
+
+              <h3 class="text-xl font-black text-slate-900 group-hover:text-brand-red transition-colors">
+                প্রফেশনাল টাইপিং ও অনলাইন এক্সপার্ট
+              </h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                সরকারি বিভিন্ন দপ্তরের কম্পিউটার অপারেটর ও ডাটা এন্ট্রি পদের টাইপিং স্পিড টেস্ট পাসের জন্য বিশেষ ক্র্যাশ কোর্স।
+              </p>
+
+              <!-- Modules -->
+              <div class="mt-5 space-y-2 border-t border-slate-100 pt-4">
+                <div class="text-xs font-bold text-slate-700">সিলেবাসের প্রধান বিষয়সমূহ:</div>
+                <ul class="text-xs text-slate-600 space-y-1.5">
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-red text-xs"></i>
+                    <span>বিজয় ও অভ্র উভয় লেআউটে উচ্চগতি অর্জন</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-red text-xs"></i>
+                    <span>ইংরেজি টাইপিংয়ে ৩৫+ WPM নিশ্চিত করা</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-red text-xs"></i>
+                    <span>ডাটা এন্ট্রি প্র্যাকটিক্যাল টেস্ট প্রস্তুতি</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-red text-xs"></i>
+                    <span>অনলাইন ফরম ও পাসপোর্ট ফরম নিখুঁত পূরণ কৌশল</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-slate-400 block font-medium">কোর্স ফি</span>
+                <span class="text-lg font-black text-slate-900">সুলভ ফি</span>
+              </div>
+              <button onclick="openAdmissionModal('প্রফেশনাল টাইপিং ও অনলাইন')" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition shadow">
+                ভর্তি আবেদন ➔
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= DIGITAL SERVICES SECTION ================= -->
+    <section id="services" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold text-brand-emerald tracking-wider uppercase bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+            ওয়ান-স্টপ ডিজিটাল কর্নার
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">আমাদের কম্পিউটার ও অনলাইন সেবাসমূহ</h2>
+          <p class="text-slate-600 mt-2 text-sm sm:text-base">
+            প্রশিক্ষণের পাশাপাশি কামারহাটে নিত্যপ্রয়োজনীয় সকল ডিজিটাল ও প্রিন্টিং সেবা আমরা সততার সাথে প্রদান করি।
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Service 1 -->
+          <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-lg transition">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-brand-emerald flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2">অনলাইন চাকরির আবেদন</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              বিসিএস, প্রাথমিক শিক্ষক নিয়োগ, পুলিশ ও প্রতিরক্ষা এবং সকল সরকারি-বেসরকারি চাকরির ফরম নির্ভুলভাবে পূরণ ও এডমিট প্রিন্ট।
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-lg transition">
+            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-camera"></i>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2">ডিজিটাল ছবি তোলা ও প্রিন্ট</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              স্টুডিও ব্যাকগ্রাউন্ডসহ পাসপোর্ট ও স্ট্যাম্প সাইজ ছবি ৫ মিনিটে ল্যাব কোয়ালিটিতে প্রিন্ট করে দেওয়া হয়।
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-lg transition">
+            <div class="w-12 h-12 rounded-2xl bg-red-100 text-brand-red flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-print"></i>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2">ফটোকপি ও কালার প্রিন্টিং</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              স্পষ্ট ফটোকপি, যেকোনো ডকুমেন্টের রঙিন প্রিন্ট, হাই-কোয়ালিটি পেপারে স্ক্যানিং ও লেমিনেটিং সুবিধা।
+            </p>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-lg transition">
+            <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-id-card"></i>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2">নাগরিক ও অনলাইন সেবা</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              জন্ম নিবন্ধন আবেদন ও সংশোধন, পল্লী বিদ্যুৎ বিল পরিশোধ, জাতীয় পরিচয়পত্র ডাউনলোড ও রেজাল্ট উত্তোলন।
+            </p>
+          </div>
+
+        </div>
+
+        <!-- WhatsApp Quick Banner -->
+        <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-brand-emeraldDeep to-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-luxury">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-[#25D366] text-white flex items-center justify-center text-3xl shrink-0">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div>
+              <h4 class="text-lg sm:text-xl font-bold">দোকানে না এসেই ঘরে বসে ডকুমেন্ট প্রিন্ট চান?</h4>
+              <p class="text-xs sm:text-sm text-slate-300">আমাদের হোয়াটসঅ্যাপে পিডিএফ বা ছবি পাঠিয়ে দিন, আমরা কাজ প্রস্তুত রাখব।</p>
+            </div>
+          </div>
+          <a href="https://wa.me/8801744782589?text=হ্যালো!%20আমি%20প্রিন্ট/অনলাইন%20কাজের%20জন্য%20ফাইল%20পাঠাচ্ছি।" target="_blank" class="px-6 py-3 rounded-xl bg-white text-slate-900 font-extrabold text-sm hover:bg-amber-300 transition shrink-0 flex items-center gap-2">
+            <i class="fa-solid fa-paper-plane text-brand-emerald"></i> ফাইল পাঠান
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= INTERACTIVE FEE CALCULATOR & ADMISSION ================= -->
+    <section id="calculator" class="py-20 bg-slate-50 border-t border-slate-200/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-5 space-y-6">
+            <span class="text-xs font-bold text-brand-emerald tracking-wider uppercase bg-emerald-100/70 px-3 py-1 rounded-full">
+              সহজ ভর্তি প্রক্রিয়া
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900">
+              কোর্স ফি দেখুন ও অনলাইনে আবেদন করুন
+            </h2>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              ডানপাশের ড্রপডাউন থেকে আপনার পছন্দের কোর্সটি নির্বাচন করুন। কোর্সের মেয়াদ ও আনুমানিক ফি দেখে সরাসরি অনলাইন ভর্তি ফরম জমা দিন। তথ্য জমা হওয়ার পর আমাদের অফিসিয়াল নম্বর থেকে আপনার সাথে যোগাযোগ করা হবে।
+            </p>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-3">
+              <div class="flex items-center gap-3 text-slate-800 font-bold text-sm">
+                <i class="fa-solid fa-phone-volume text-brand-red"></i>
+                <span>জরুরি যোগাযোগ: ০১৭১৪-৪৭৮২৫৮৯</span>
+              </div>
+              <div class="flex items-center gap-3 text-slate-600 text-xs font-medium">
+                <i class="fa-solid fa-location-dot text-brand-emerald"></i>
+                <span>ঠিকানা: কামারহাট বাজার, পাথরঘাটা, বরগুনা</span>
+              </div>
+              <div class="flex items-center gap-3 text-slate-600 text-xs font-medium">
+                <i class="fa-solid fa-clock text-amber-500"></i>
+                <span>অফিস সময়: প্রতিদিন সকাল ৮টা থেকে রাত ৯টা পর্যন্ত</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Interactive Form Box -->
+          <div class="lg:col-span-7">
+            <div class="bg-white p-6 sm:p-10 rounded-3xl shadow-luxury border border-slate-200 relative">
+              
+              <div class="border-b pb-5 mb-6">
+                <h3 class="text-2xl font-black text-slate-900">শিক্ষার্থী ভর্তি ফরম</h3>
+                <p class="text-xs text-slate-500 mt-1">সব তথ্য নির্ভুলভাবে বাংলায় অথবা ইংরেজিতে পূরণ করুন</p>
+              </div>
+
+              <form id="inlineAdmissionForm" onsubmit="handleInlineSubmit(event)" class="space-y-5">
+                
+                <!-- Course Selector -->
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                    আগ্রহের কোর্স নির্বাচন করুন *
+                  </label>
+                  <select id="courseSelect" onchange="updateCoursePreview()" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-emerald focus:border-brand-emerald outline-none text-sm bg-slate-50 font-semibold transition">
+                    <option value="office" data-duration="৩ মাস / ৬ মাস" data-fee="সুলভ কিস্তিতে">কম্পিউটার অফিস অ্যাপ্লিকেশন কোর্স (MS Office)</option>
+                    <option value="basic" data-duration="২ মাস" data-fee="বিশেষ ছাড় প্রযোজ্য">বেসিক কম্পিউটার ও ইন্টারনেট অপারেটিং</option>
+                    <option value="typing" data-duration="১ থেকে ৩ মাস" data-fee="স্বল্প ফি">প্রফেশনাল বাংলা ও ইংরেজি টাইপিং গতি বৃদ্ধি</option>
+                  </select>
+                </div>
+
+                <!-- Dynamic Course Summary Card -->
+                <div id="coursePreviewCard" class="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 flex items-center justify-between">
+                  <div>
+                    <span class="text-[11px] font-bold text-emerald-800 uppercase block">কোর্স মেয়াদকাল:</span>
+                    <span id="previewDuration" class="text-sm font-black text-slate-900">৩ মাস / ৬ মাস</span>
+                  </div>
+                  <div class="text-right">
+                    <span class="text-[11px] font-bold text-emerald-800 uppercase block">পেমেন্ট সুবিধা:</span>
+                    <span id="previewFee" class="text-sm font-black text-brand-emerald">সুলভ কিস্তিতে পরিশোধ</span>
+                  </div>
+                </div>
+
+                <!-- Input Fields -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">শিক্ষার্থীর পুরো নাম *</label>
+                    <input type="text" id="inlineName" required placeholder="উদাঃ মোঃ সাব্বির আহমেদ" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-emerald outline-none text-sm">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">সচল মোবাইল নম্বর *</label>
+                    <input type="tel" id="inlinePhone" required placeholder="017XXXXXXXX" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-emerald outline-none text-sm">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">গ্রাম / ইউনিয়ন / এলাকা</label>
+                    <input type="text" id="inlineAddress" placeholder="যেমন: কামারহাট / পাথরঘাটা" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-emerald outline-none text-sm">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">পছন্দের ব্যাচ সময়</label>
+                    <select id="inlineBatch" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-emerald outline-none text-sm bg-white">
+                      <option value="সকাল (৯:০০ - ১১:০০)">সকালের ব্যাচ (৯:০০ - ১১:০০)</option>
+                      <option value="দুপুর (৩:০০ - ৫:০০)">বিকেলের ব্যাচ (৩:০০ - ৫:০০)</option>
+                      <option value="সন্ধ্যা (৬:০০ - ৮:০০)">সন্ধ্যার ব্যাচ (৬:০০ - ৮:০০)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-emerald via-emerald-700 to-brand-emeraldDark text-white font-black text-base shadow-glow-emerald hover:shadow-xl hover:scale-[1.01] transition flex items-center justify-center gap-2">
+                  <i class="fa-brands fa-whatsapp text-amber-300 text-xl"></i>
+                  ভর্তি আবেদন জমা দিন (হোয়াটসঅ্যাপে)
+                </button>
+
+                <p class="text-[11px] text-center text-slate-400">
+                  <i class="fa-solid fa-lock text-emerald-600 mr-1"></i> আপনার তথ্য সম্পূর্ণ নিরাপদ। সাবমিট করলে আমাদের হোয়াটসঅ্যাপে সরাসরি তথ্য পৌঁছে যাবে।
+                </p>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section id="reviews" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-bold text-brand-red tracking-wider uppercase bg-red-50 px-3 py-1 rounded-full">
+            শিক্ষার্থীদের অভিজ্ঞতা
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">আমাদের শিক্ষার্থীরা যা বলছেন</h2>
+          <p class="text-slate-600 text-sm mt-2">কামারহাট ও পাথরঘাটা অঞ্চলের শত শত শিক্ষার্থীর নির্ভরতার প্রতীক।</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed italic">
+                “আমি কম্পিউটার অফিস কোর্স করার পর এখন একটি বেসরকারি সংস্থায় ডাটা এন্ট্রির কাজ করছি। নিক্সন স্যারের আন্তরিক ব্যবহার এবং আলাদা আলাদা কম্পিউটারে প্র্যাকটিস করানোর পদ্ধতি অতুলনীয়।”
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">
+                রা
+              </div>
+              <div>
+                <h5 class="text-sm font-bold text-slate-900">রাকিবুল হাসান</h5>
+                <span class="text-[11px] text-slate-500">পাথরঘাটা, বরগুনা</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed italic">
+                “আমার চাকরির আবেদনের জন্য দ্রুত ছবি প্রিন্ট এবং অনলাইন আবেদন করার প্রয়োজন ছিল। নিক্সন কম্পিউটার স্কুলে খুব সুন্দরভাবে ও দ্রুত কাজ করে দিয়েছে। এখানকার সেবায় আমি খুবই সন্তুষ্ট।”
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-amber-600 text-white font-bold flex items-center justify-center text-sm">
+                ত
+              </div>
+              <div>
+                <h5 class="text-sm font-bold text-slate-900">তানিয়া আক্তার</h5>
+                <span class="text-[11px] text-slate-500">কামারহাট</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed italic">
+                “বাংলা টাইপিং নিয়ে আমার অনেক সমস্যা ছিল। এখানকার বিশেষ প্র্যাকটিস সেশনের কারণে এখন আমার টাইপিং স্পিড মিনিটে ৩৫ শব্দের বেশি। পাথরঘাটায় এমন ট্রেনিং সেন্টার সত্যি প্রশংসনীয়।”
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-red-600 text-white font-bold flex items-center justify-center text-sm">
+                ম
+              </div>
+              <div>
+                <h5 class="text-sm font-bold text-slate-900">মাহমুদুল হক</h5>
+                <span class="text-[11px] text-slate-500">শিক্ষার্থী</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= FAQ SECTION ================= -->
+    <section class="py-20 bg-slate-50 border-t border-slate-200/80">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-14">
+          <span class="text-xs font-bold text-brand-emerald tracking-wider uppercase bg-emerald-100 px-3 py-1 rounded-full">
+            সচরাচর জিজ্ঞাসিত প্রশ্ন
+          </span>
+          <h2 class="text-3xl font-black text-slate-900 mt-2">আপনার মনে কি কোনো প্রশ্ন আছে?</h2>
+        </div>
+
+        <div class="space-y-4" id="faqAccordion">
+          
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+            <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+              <span>ভর্তি হতে শিক্ষাগত কোনো বাধ্যবাধকতা আছে কি?</span>
+              <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+            </button>
+            <div class="px-6 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed hidden">
+              না, যেকোনো শ্রেণি বা বয়সের শিক্ষার্থী ও সাধারণ মানুষ আমাদের এখানে কম্পিউটার শিখতে পারেন। ন্যূনতম অক্ষরজ্ঞান ও শেখার আগ্রহ থাকলেই যথেষ্ট।
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+            <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+              <span>কোর্স শেষে সার্টিফিকেট প্রদান করা হয় কি?</span>
+              <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+            </button>
+            <div class="px-6 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed hidden">
+              হ্যাঁ, ৩ মাস ও ৬ মাস মেয়াদী কোর্স সফলভাবে সমাপ্তির পর মূল্যায়ন পরীক্ষার মাধ্যমে আকর্ষণীয় প্রাতিষ্ঠানিক সনদপত্র প্রদান করা হয়।
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+            <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+              <span>কোর্স ফি কি কিস্তিতে দেওয়া যাবে?</span>
+              <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+            </button>
+            <div class="px-6 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed hidden">
+              অবশ্যই। শিক্ষার্থীদের সুবিধার্থে ভর্তির সময় আংশিক ফি দিয়ে বাকি টাকা প্রতি মাসের সহজ কিস্তিতে পরিশোধ করার সুযোগ রয়েছে।
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= CONTACT & LOCATION ================= -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-bold text-brand-red tracking-wider uppercase bg-red-100 px-3 py-1 rounded-full">
+            সরাসরি আসুন
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">আমাদের যোগাযোগের ঠিকানা</h2>
+          <p class="text-slate-600 text-sm mt-2">কামারহাট বাজার, পাথরঘাটা, বরগুনায় যেকোনো তথ্যের জন্য চলে আসুন।</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 text-center hover:border-emerald-300 transition">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-emerald flex items-center justify-center text-2xl mx-auto mb-4">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-1">প্রতিষ্ঠানের অবস্থান</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              কামারহাট, পাথরঘাটা, বরগুনা, বাংলাদেশ
+            </p>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 text-center hover:border-amber-300 transition">
+            <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl mx-auto mb-4">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-1">ফোন ও হোয়াটসঅ্যাপ</h4>
+            <a href="tel:01744782589" class="text-sm font-extrabold text-brand-emerald block hover:underline">
+              ০১৭৪৪৭৮২৫৮৯
+            </a>
+            <p class="text-[11px] text-slate-500 mt-1">কল বা হোয়াটসঅ্যাপে বার্তা পাঠান</p>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 text-center hover:border-red-300 transition">
+            <div class="w-14 h-14 rounded-2xl bg-red-100 text-brand-red flex items-center justify-center text-2xl mx-auto mb-4">
+              <i class="fa-solid fa-business-time"></i>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-1">খোলা থাকার সময়সূচি</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              শনিবার - শুক্রবার (প্রতিদিন)<br>
+              সকাল ৮:০০ টা হতে রাত ৯:০০ টা
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= LUXURY FOOTER ================= -->
+  <footer class="bg-slate-950 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800/80">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-emerald to-amber-400 flex items-center justify-center text-slate-950 font-bold text-xl">
+              <i class="fa-solid fa-laptop"></i>
+            </div>
+            <span class="text-xl font-black text-white">Nixon Computer School</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            পাথরঘাটা, বরগুনার শিক্ষার্থীদের যুগোপযোগী ডিজিটাল দক্ষতায় গড়ে তুলতে প্রতিশ্রুতিবদ্ধ একটি নির্ভরযোগ্য আধুনিক আইটি প্রশিক্ষণ প্রতিষ্ঠান।
+          </p>
+          <div class="pt-2 flex gap-3">
+            <a href="https://wa.me/8801744782589" class="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="tel:01744782589" class="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h5 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">ন্যাভিগেশন</h5>
+          <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
+            <li><a href="#home" class="hover:text-amber-400 transition">মূলপাতা (Home)</a></li>
+            <li><a href="#about" class="hover:text-amber-400 transition">আমাদের সম্পর্কে</a></li>
+            <li><a href="#courses" class="hover:text-amber-400 transition">সকল কোর্সসমূহ</a></li>
+            <li><a href="#services" class="hover:text-amber-400 transition">অনলাইন ও স্টুডিও সেবা</a></li>
+            <li><a href="#calculator" class="hover:text-amber-400 transition">কোর্স ফি ও ভর্তি</a></li>
+          </ul>
+        </div>
+
+        <!-- Courses List -->
+        <div>
+          <h5 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">জনপ্রিয় কোর্স</h5>
+          <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
+            <li>• কম্পিউটার অফিস অ্যাপ্লিকেশন (৩ ও ৬ মাস)</li>
+            <li>• বেসিক কম্পিউটার ও ইন্টারনেট ব্রাউজিং</li>
+            <li>• বাংলা ও ইংরেজি দ্রুত টাইপিং কোর্স</li>
+            <li>• সরকারি ও বেসরকারি চাকরির আবেদন প্রশিক্ষণ</li>
+          </ul>
+        </div>
+
+        <!-- Location Card -->
+        <div>
+          <h5 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">যোগাযোগের ঠিকানা</h5>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p><i class="fa-solid fa-location-dot text-brand-red mr-2"></i> কামারহাট, পাথরঘাটা, বরগুনা</p>
+            <p><i class="fa-solid fa-phone text-brand-emerald mr-2"></i> ০১৭১৪-৪৭৮২৫৮৯</p>
+            <p><i class="fa-solid fa-clock text-amber-400 mr-2"></i> প্রতিদিন: সকাল ৮:০০ - রাত ৯:০০</p>
+          </div>
+          <div class="mt-4 p-3 rounded-xl bg-slate-900 border border-slate-800 text-[11px] text-slate-400">
+            পাথরঘাটা শাখার জন্য সরাসরি সেন্টারে এসে কথা বলতে পারেন।
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+        <p>© 2026 Nixon Computer School. সর্বস্বত্ব সংরক্ষিত।</p>
+        <p class="text-slate-400">ডিজাইন ও প্রযুক্তি: আধুনিক রেসপনসিভ ওয়েব সল্যুশন</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING ACTION BUTTONS ================= -->
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/8801744782589?text=হ্যালো!%20আমি%20Nixon%20Computer%20School%20সম্পর্কে%20তথ্য%20জানতে%20চাই।" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba59] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 focus:outline-none"
+     aria-label="WhatsApp-এ মেসেজ পাঠান">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
+
+  <!-- Back to top button -->
+  <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 left-6 z-50 bg-white/90 backdrop-blur-md text-slate-800 p-3 rounded-xl shadow-lg border border-slate-200 hover:bg-slate-100 hidden transition-all duration-300">
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
+
+  <!-- ================= MODAL ADMISSION FORM ================= -->
+  <div id="admissionModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative my-8 border border-white">
+      
+      <!-- Close Button -->
+      <button onclick="closeAdmissionModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-800 text-2xl focus:outline-none">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-brand-emerald mx-auto flex items-center justify-center text-2xl mb-2">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <h3 class="text-2xl font-black text-slate-900">ভর্তি আবেদন ফরম</h3>
+        <p class="text-xs text-slate-500 mt-1">নিক্সন কম্পিউটার স্কুল • কামারহাট, পাথরঘাটা</p>
+      </div>
+
+      <form id="modalForm" onsubmit="handleModalSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1">শিক্ষার্থীর নাম *</label>
+          <input type="text" id="mName" required placeholder="আপনার পুরো নাম লিখুন" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-emerald outline-none text-sm">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1">মোবাইল নম্বর *</label>
+          <input type="tel" id="mPhone" required placeholder="017XXXXXXXX" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-emerald outline-none text-sm">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1">কোর্স নির্বাচন করুন *</label>
+          <select id="mCourse" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-emerald outline-none text-sm bg-white font-medium">
+            <option value="কম্পিউটার অফিস অ্যাপ্লিকেশন কোর্স">কম্পিউটার অফিস অ্যাপ্লিকেশন কোর্স</option>
+            <option value="বেসিক কম্পিউটার ও ইন্টারনেট">বেসিক কম্পিউটার ও ইন্টারনেট</option>
+            <option value="প্রফেশনাল টাইপিং গতি বৃদ্ধি কোর্স">প্রফেশনাল টাইপিং গতি বৃদ্ধি কোর্স</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1">ঠিকানা / গ্রাম</label>
+          <input type="text" id="mAddress" placeholder="যেমন: কামারহাট, পাথরঘাটা" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-emerald outline-none text-sm">
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3.5 bg-brand-emerald hover:bg-emerald-800 text-white font-bold rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-lg text-amber-300"></i>
+            আবেদন হোয়াটসঅ্যাপে পাঠান
+          </button>
+          <p class="text-[11px] text-center text-slate-400 mt-2">আবেদন জমা দিলে সরাসরি আমাদের অফিস হোয়াটসঅ্যাপে মেসেজ যাবে।</p>
+        </div>
+      </form>
+
     </div>
   </div>
-</section>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h3>Nixon Computer School</h3>
-        <p>
-          কামারহাট, পাথরঘাটা, বরগুনায় কম্পিউটার প্রশিক্ষণ
-          ও বিশ্বস্ত ডিজিটাল সেবা প্রদানে আমরা বদ্ধপরিকর।
-        </p>
-      </div>
-
-      <div>
-        <h3>দ্রুত লিংক</h3>
-        <a href="#home">হোম</a>
-        <a href="#about">আমাদের সম্পর্কে</a>
-        <a href="#courses">কোর্স</a>
-        <a href="#contact">যোগাযোগ</a>
-      </div>
-
-      <div>
-        <h3>যোগাযোগ</h3>
-        <p>কামারহাট, পাথরঘাটা, বরগুনা</p>
-        <a href="tel:01744782589">01744782589</a>
-        <a href="https://wa.me/8801744782589">WhatsApp</a>
-      </div>
-    </div>
-
-    <div class="copyright">
-      © 2026 Nixon Computer School. সর্বস্বত্ব সংরক্ষিত।
-    </div>
+  <!-- Toast Notification -->
+  <div id="toastBox" class="fixed bottom-5 left-5 z-50 hidden bg-slate-900 text-white text-xs sm:text-sm py-3 px-5 rounded-2xl shadow-2xl items-center gap-3 border border-slate-700">
+    <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+    <span id="toastMsg">আবেদন সফল হয়েছে!</span>
   </div>
-</footer>
 
-<a class="whatsapp-float"
-   href="https://wa.me/8801744782589"
-   target="_blank"
-   aria-label="WhatsApp">
-  ☎
-</a>
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Mobile Menu Controls
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
 
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+    function toggleMobileMenu() {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      }
+    }
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 
-  const name = this.elements["name"].value.trim();
-  const phone = this.elements["phone"].value.trim();
-  const message = this.elements["message"].value.trim();
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (!mobileMenu.classList.contains('hidden')) {
+          toggleMobileMenu();
+        }
+      });
+    });
 
-  const text =
-    "Nixon Computer School-এ যোগাযোগ:%0A" +
-    "নাম: " + encodeURIComponent(name) + "%0A" +
-    "মোবাইল: " + encodeURIComponent(phone) + "%0A" +
-    "বার্তা: " + encodeURIComponent(message);
+    // Course Selector Dynamic Updates
+    function updateCoursePreview() {
+      const select = document.getElementById('courseSelect');
+      const selectedOption = select.options[select.selectedIndex];
+      const duration = selectedOption.getAttribute('data-duration');
+      const fee = selectedOption.getAttribute('data-fee');
 
-  window.open("https://wa.me/8801744782589?text=" + text, "_blank");
-});
-</script>
+      document.getElementById('previewDuration').textContent = duration;
+      document.getElementById('previewFee').textContent = fee;
+    }
 
+    // Modal Controls
+    const admissionModal = document.getElementById('admissionModal');
+    const modalCourseSelect = document.getElementById('mCourse');
+
+    function openAdmissionModal(courseName = '') {
+      if (courseName && modalCourseSelect) {
+        for (let i = 0; i < modalCourseSelect.options.length; i++) {
+          if (modalCourseSelect.options[i].value.includes(courseName)) {
+            modalCourseSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      admissionModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAdmissionModal() {
+      admissionModal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    admissionModal.addEventListener('click', (e) => {
+      if (e.target === admissionModal) {
+        closeAdmissionModal();
+      }
+    });
+
+    // Toast Notification helper
+    function showToast(message) {
+      const toast = document.getElementById('toastBox');
+      const msg = document.getElementById('toastMsg');
+      msg.textContent = message;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 4000);
+    }
+
+    // Handle Inline Admission Form Submit
+    function handleInlineSubmit(e) {
+      e.preventDefault();
+      const courseSelect = document.getElementById('courseSelect');
+      const courseName = courseSelect.options[courseSelect.selectedIndex].text;
+      const name = document.getElementById('inlineName').value.trim();
+      const phone = document.getElementById('inlinePhone').value.trim();
+      const address = document.getElementById('inlineAddress').value.trim() || 'পাথরঘাটা';
+      const batch = document.getElementById('inlineBatch').value;
+
+      const message = `*অনলাইন ভর্তি আবেদন (ওয়েবসাইট)*%0A` +
+                      `👤 শিক্ষার্থীর নাম: ${encodeURIComponent(name)}%0A` +
+                      `📞 মোবাইল নম্বর: ${encodeURIComponent(phone)}%0A` +
+                      `💻 নির্বাচিত কোর্স: ${encodeURIComponent(courseName)}%0A` +
+                      `⏰ ব্যাচ সময়: ${encodeURIComponent(batch)}%0A` +
+                      `📍 ঠিকানা: ${encodeURIComponent(address)}%0A` +
+                      `প্রতিষ্ঠানের নাম: Nixon Computer School, কামারহাট`;
+
+      showToast('আবেদন প্রস্তুত হচ্ছে...');
+      setTimeout(() => {
+        window.open(`https://wa.me/8801744782589?text=${message}`, '_blank');
+      }, 500);
+    }
+
+    // Handle Modal Form Submit
+    function handleModalSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('mName').value.trim();
+      const phone = document.getElementById('mPhone').value.trim();
+      const course = document.getElementById('mCourse').value;
+      const address = document.getElementById('mAddress').value.trim() || 'পাথরঘাটা';
+
+      const message = `*ভর্তি আবেদন - Nixon Computer School*%0A` +
+                      `👤 নাম: ${encodeURIComponent(name)}%0A` +
+                      `📞 মোবাইল: ${encodeURIComponent(phone)}%0A` +
+                      `💻 কোর্স: ${encodeURIComponent(course)}%0A` +
+                      `📍 এলাকা: ${encodeURIComponent(address)}`;
+
+      closeAdmissionModal();
+      showToast('আবেদন প্রস্তুত হচ্ছে...');
+      setTimeout(() => {
+        window.open(`https://wa.me/8801744782589?text=${message}`, '_blank');
+      }, 500);
+    }
+
+    // FAQ Accordion
+    function toggleFaq(btn) {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('i');
+      const isHidden = content.classList.contains('hidden');
+
+      // Close all others
+      document.querySelectorAll('#faqAccordion div.px-6.pb-4').forEach(item => {
+        item.classList.add('hidden');
+      });
+      document.querySelectorAll('#faqAccordion i').forEach(ic => {
+        ic.classList.remove('rotate-180');
+      });
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      }
+    }
+
+    // Back to top button visibility
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.remove('hidden');
+      } else {
+        backToTop.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
